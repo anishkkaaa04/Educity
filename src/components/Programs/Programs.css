@@ -1,0 +1,68 @@
+.programs{
+  margin:80px auto;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.program img{
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.program{
+  flex-basis: 31%;
+  position: relative;
+}
+
+.program {
+  position: relative; /* IMPORTANT */
+  border-radius: 10px;
+  overflow: hidden;
+  
+}
+
+/* main image */
+.program img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  
+}
+
+/* caption container */
+.caption {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  background: rgba(164, 164, 249, 0.7);
+  padding: 5px 10px;
+  border-radius: 20px;
+  opacity: 0;
+  padding-top: 70%;
+  transition: 0.4s ease; /* smooth transition for caption */
+}
+
+/* icon inside caption */
+.caption img {
+  width: 25px;   /* 👈 makes icon small */
+}
+
+/* text */
+.caption p {
+  color: white;
+  font-size: 14px;
+  margin: 0;
+}
+
+.program:hover .caption {
+  opacity: 1; /* show caption on hover */
+  padding-top: 0; /* reset padding to show text properly */
+}
