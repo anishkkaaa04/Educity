@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Testimonials.css";
 import next from "../../assets/next.png";
 import back from "../../assets/back.png";
@@ -8,12 +8,28 @@ import user3 from "../../assets/user3.jpeg";
 import user4 from "../../assets/user4.jpeg";
 
 const Testimonials = () => {
+  const slider = useRef();
+  let tx = 0;
+
+  const slideForward = () => {
+    if (tx > -50) {
+      tx -= 25;
+    }
+    slider.current.style.transform = `translateX(${tx}%)`;
+  };
+
+  const slideBackward = () => {
+    if (tx < 0) {
+      tx += 25;
+    }
+    slider.current.style.transform = `translateX(${tx}%)`;
+  };
   return (
     <div className="testimonials">
-      <img src={next} alt="Next" className="next-btn" />
-      <img src={back} alt="Back" className="back-btn" />
+      <img src={next} alt="Next" className="next-btn" onClick={slideForward} />
+      <img src={back} alt="Back" className="back-btn" onClick={slideBackward} />
       <div className="slider">
-        <ul>
+        <ul ref={slider}>
           <li>
             <div className="slide">
               <div className="user-info">

@@ -1,42 +1,106 @@
-.testimonials{
-  margin:80px auto;
-  padding:0 80px;
+/* Container */
+.testimonials {
+  margin: 80px auto;
+  padding: 0 80px;
   position: relative;
-
+  text-align: center;
 }
 
-.next-btn, .back-btn{
+/* Navigation Buttons */
+.next-btn, .back-btn {
   position: absolute;
   top: 50%;
-  right: 0;
   transform: translateY(-50%);
-  background-color: #436284;
-  padding: 15px;
+  background: #4b57d1;
+  padding: 12px;
   border-radius: 50%;
   cursor: pointer;
-  background: rgb(114, 114, 203);
+  z-index: 10;
+  width: 40px;
 }
 
-.back-btn{
-  right: auto;
+.next-btn {
+  right: 0;
+}
+
+.back-btn {
   left: 0;
 }
 
-.slider{
+/* Slider Wrapper */
+.slider {
   overflow: hidden;
-
+  max-width: 900px;
+  margin: auto;
 }
 
-.slider ul{
+/* Cards Row */
+.slider ul {
   display: flex;
-  width: 200%;
+  
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+  width: max-content;
   overflow-x: hidden;
-  transition: 0.5s;
-
+  transform:translateX(-15%) ;
 }
 
-.slider ul li{
+/* Each Card Wrapper */
+.slider ul li {
   list-style: none;
-  width: 50%;
-  padding: 20px;
+  width: 420px;
+  flex-shrink: 0;
+}
+
+/* Card Design */
+.slide {
+  background: #fff;
+  color: #333;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: 0.3s;
+}
+
+.slide:hover {
+  transform: translateY(-5px);
+}
+
+/* User Info Section */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+/* Profile Image */
+.user-info img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4b57d1;
+}
+
+/* Name */
+.user-info h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #2c2c2c;
+}
+
+/* Location */
+.user-info span {
+  font-size: 13px;
+  color: #777;
+}
+
+/* Text */
+.slide p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
 }
